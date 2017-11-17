@@ -28,14 +28,14 @@ import Hal8 from "./src/components/temp/Hal8";
 
 class Home extends Component<{}> {
   static navigationOptions = {
-    headerStyle: {backgroundColor: "#f1900f", elevation: null},
+    headerStyle: {backgroundColor: "#c0392b", elevation: null},
     header: null
   };
 
   render() {
     return (
       <View style={styles.kotak}>
-        <StatusBar barStyle="light-content" backgroundColor="#f1900f" />
+        <StatusBar barStyle="light-content" backgroundColor="#c0392b" />
         <Login navigation={this.props.navigation} />
       </View>
     );

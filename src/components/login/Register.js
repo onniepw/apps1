@@ -106,7 +106,7 @@ render() {
 
   static navigationOptions = {
     headerStyle: {
-      backgroundColor: "#f1900f",
+      backgroundColor: "#c0392b",
       elevation: null
     },
     //headerLeft: null
@@ -117,7 +117,7 @@ render() {
 const styles = StyleSheet.create({
   kotak: {
     flex: 1,
-    backgroundColor: '#f1900f'
+    backgroundColor: '#c0392b'
   },
   kotaklogo: {
     flexGrow: 1,

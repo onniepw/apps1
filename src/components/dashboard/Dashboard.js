@@ -14,7 +14,7 @@ export default class Dashboard extends Component {
 
   static navigationOptions = {
     headerStyle: {
-      backgroundColor: "#f1900f",
+      backgroundColor: "#c0392b",
       elevation: null
     },
     headerLeft: null
@@ -57,7 +57,7 @@ export default class Dashboard extends Component {
 const styles = StyleSheet.create({
   layar: {
     flex: 1,
-    backgroundColor: '#f1900f',
+    backgroundColor: '#c0392b',
     flexDirection: 'column'
   },
   sublayar: {
@@ -69,11 +69,11 @@ const styles = StyleSheet.create({
   },
   kotakmenu: {
     flex: 3,
-    backgroundColor: '#F8C178'
+    backgroundColor: '#e74c3c'
   },
   kotakbawah: {
     flex: 0.5,
-    backgroundColor: '#F8AD4A',
+    backgroundColor: '#c0392b',
     flexDirection: 'row'
   },
   menukecil: {
@@ -85,19 +85,19 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#f1900f',
+    backgroundColor: '#c0392b',
   },
   slide2: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#f1900f',
+    backgroundColor: '#c0392b',
   },
   slide3: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#f1900f',
+    backgroundColor: '#c0392b',
   },
   logo1: {
     width: 50,

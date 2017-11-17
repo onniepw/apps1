@@ -69,14 +69,14 @@ export default class Login extends Component<{}> {
       <View style={styles.kotak}>
         <View behavior="padding" style={styles.kotak}>
           <View style={styles.kotaklogo}>
-            <Image style={styles.logo} source={require("../../img/fish.png")} />
-            <Text style={styles.judul}>GoldenLab Apps</Text>
+            <Image style={styles.logo} source={require("../../img/chick.png")} />
+            <Text style={styles.judul}>by GoldenLab</Text>
           </View>
 
           <KeyboardAvoidingView behavior="padding" style={styles.kibot}>
             <TextInput
               placeholder="Email"
-              placeholderTextColor="rgba(255,255,255,0.7)"
+              placeholderTextColor="white"
               returnKeyType="next"
               onSubmitEditing={() => this.passwordInput.focus()}
               keyboardType="email-address"
@@ -87,7 +87,7 @@ export default class Login extends Component<{}> {
             />
             <TextInput
               placeholder="Password"
-              placeholderTextColor="rgba(255,255,255,0.7)"
+              placeholderTextColor="white"
               returnKeyType="go"
               secureTextEntry
               ref={input => (this.passwordInput = input)}
@@ -103,10 +103,10 @@ export default class Login extends Component<{}> {
         </View>
 
         <TouchableOpacity style={styles.tombol}>
-          <Text style={styles.texttombol} onPress={() => this.props.navigation.navigate("Register")} title="Sign up">Sign up</Text>
+          <Text style={styles.textlink} onPress={() => this.props.navigation.navigate("Register")} title="Sign up">Sign up</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.tombol}>
-          <Text style={styles.texttombol} onPress={() => this.props.navigation.navigate("ForgetPassword")} title="Forget Password">Forget Password</Text>
+          <Text style={styles.textlink} onPress={() => this.props.navigation.navigate("ForgetPassword")} title="Forget Password">Forget Password</Text>
         </TouchableOpacity>
 
       </View>
@@ -117,23 +117,25 @@ export default class Login extends Component<{}> {
 const styles=StyleSheet.create({
   kotak: {
     flex: 1,
-    backgroundColor: '#f1900f'
+    backgroundColor: '#c0392b'
   },
   kotaklogo: {
     flexGrow: 1,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    backgroundColor: 'white'
   },
   logo: {
-    width: 200,
-    height: 100
+    width: 320,
+    height: 135
   },
   judul: {
-    color: 'black',
+    color: '#c0392b',
     textAlign: 'center',
     marginTop: 10,
-    width: 160,
-    opacity: 0.8
+    //width: 160,
+    opacity: 0.8,
+    fontWeight: '900'
   },
   kibot: {
     margin: 20,
@@ -142,15 +144,21 @@ const styles=StyleSheet.create({
   },
   kotaktombol: {
     paddingVertical: 15,
-    backgroundColor: 'rgba(255,255,255,0.2)'
+    //backgroundColor: 'rgba(255,255,255,0.2)'
+    backgroundColor: 'white'
   },
   texttombol: {
     textAlign: 'center',
-    color: 'black',
+    color: '#c0392b',
+    fontWeight: '700'
+  },
+  textlink: {
+    textAlign: 'center',
+    color: 'white',
     fontWeight: '700'
   },
   tombol: {
-    paddingVertical: 5
+    paddingVertical: 5,
   }
 });
 

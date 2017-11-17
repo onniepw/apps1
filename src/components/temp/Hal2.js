@@ -10,7 +10,7 @@ export default class Hal2 extends Component {
 
   static navigationOptions = {
     headerStyle: {
-      backgroundColor: "#f1900f",
+      backgroundColor: "#c0392b",
       elevation: null
     },
     //headerLeft: null
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#f1900f'
+    backgroundColor: '#c0392b'
   },
   kotak2: {
     alignItems: 'center',
