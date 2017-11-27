@@ -17,10 +17,16 @@ export default class Dashboard extends Component {
       backgroundColor: "#c0392b",
       elevation: null
     },
+    headerTitleStyle: {
+      color: 'white'
+    },
+    headerTintColor: 'white',
+    gesturesEnabled: false,
     headerLeft: null
   };
 
-  render() {
+  render(props) {
+    //const {goBack} = this.props.navigation;
     return (
       <View style={styles.layar}>
         <View style={styles.sublayar, styles.iklan}>
@@ -36,9 +42,11 @@ export default class Dashboard extends Component {
             </View>
           </Swiper>
         </View>
-        <View style={styles.sublayar, styles.kotakmenu}></View>
+        <View style={styles.sublayar, styles.kotakmenu}>
+          <Text style={styles.subjudul}>{ this.props.navigation.state.params.UserName }</Text>
+        </View>
         <View style={styles.sublayar, styles.kotakbawah}>
-          <TouchableOpacity style={styles.menukecil} onPress={() => this.props.navigation.navigate("Hal1")}><Image style={styles.logo1} source={require("../../img/icon1.png")} /></TouchableOpacity>
+          <TouchableOpacity style={styles.menukecil} onPress={() => this.props.navigation.navigate("Toko")}><Image style={styles.logo1} source={require("../../img/icon1.png")} /></TouchableOpacity>
           <TouchableOpacity style={styles.menukecil} onPress={() => this.props.navigation.navigate("Hal2")}><Image style={styles.logo1} source={require("../../img/icon2.png")} /></TouchableOpacity>
           <TouchableOpacity style={styles.menukecil} onPress={() => this.props.navigation.navigate("Hal3")}><Image style={styles.logo1} source={require("../../img/icon3.png")} /></TouchableOpacity>
           <TouchableOpacity style={styles.menukecil} onPress={() => this.props.navigation.navigate("Hal4")}><Image style={styles.logo1} source={require("../../img/icon4.png")} /></TouchableOpacity>
@@ -69,7 +77,7 @@ const styles = StyleSheet.create({
   },
   kotakmenu: {
     flex: 3,
-    backgroundColor: '#e74c3c'
+    backgroundColor: 'white'
   },
   kotakbawah: {
     flex: 0.5,

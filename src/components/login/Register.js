@@ -20,22 +20,6 @@ export default class Register extends Component {
     }
   }
 
-  //handleNameChange = (evt) => {
-    //this.setState({ UserName: evt.target.value });
-  //}
-
-  //handleEmailChange = (evt) => {
-    //this.setState({ UserEmail: evt.target.value });
-  //}
-
-  //handlePasswordChange = (evt) => {
-    //this.setState({ UserPassword: evt.target.value });
-  //}
-
-  //handleSubmit = () => {
-    //const { UserName, UserEmail, UserPassword } = this.state;
-  //}
-
   UserRegistrationFunction = () =>{
     const { UserName }  = this.state;
     const { UserEmail }  = this.state;
@@ -77,26 +61,38 @@ render() {
         <KeyboardAvoidingView behavior="padding" style={styles.kibot}>
           <TextInput
             placeholder="Nama"
-            placeholderTextColor="rgba(255,255,255,0.7)"
+            placeholderTextColor="#c0392b"
             //value={this.state.UserName}
+            underlineColorAndroid='#c0392b'
+            onSubmitEditing={() => this.emailInput.focus()}
             onChangeText={UserName => this.setState({UserName})}
           />
           <TextInput
             placeholder="Email"
-            placeholderTextColor="rgba(255,255,255,0.7)"
+            placeholderTextColor="#c0392b"
+            onSubmitEditing={() => this.passwordInput.focus()}
+            ref={input => (this.emailInput = input)}
             //value={this.state.UserEmail}
+            underlineColorAndroid='#c0392b'
             onChangeText={UserEmail => this.setState({UserEmail})}
           />
           <TextInput
             placeholder="Password"
-            placeholderTextColor="rgba(255,255,255,0.7)"
+            placeholderTextColor="#c0392b"
             secureTextEntry
+            onSubmitEditing={() => this.tombolInput.focus()}
+            ref={input => (this.passwordInput = input)}
             //value={this.state.UserPassword}
+            underlineColorAndroid='#c0392b'
             onChangeText={UserPassword => this.setState({UserPassword})}
           />
 
-          <TouchableOpacity disabled={!isEnabled} style={styles.kotaktombol} onPress={this.UserRegistrationFunction}>
-            <Text style={styles.texttombol}>REGISTRASI</Text>
+          <TouchableOpacity
+            disabled={!isEnabled}
+            style={styles.kotaktombol}
+            onPress={this.UserRegistrationFunction}
+          >
+            <Text style={styles.texttombol} ref={component => (this.tombolInput = component)}>REGISTRASI</Text>
           </TouchableOpacity>
         </KeyboardAvoidingView>
       </View>
@@ -109,6 +105,10 @@ render() {
       backgroundColor: "#c0392b",
       elevation: null
     },
+    headerTitleStyle: {
+      color: 'white'
+    },
+        headerTintColor: 'white',
     //headerLeft: null
   };
 
@@ -117,16 +117,12 @@ render() {
 const styles = StyleSheet.create({
   kotak: {
     flex: 1,
-    backgroundColor: '#c0392b'
+    backgroundColor: 'white'
   },
   kotaklogo: {
     flexGrow: 1,
     alignItems: 'center',
     justifyContent: 'center'
-  },
-  logo: {
-    width: 200,
-    height: 100
   },
   judul: {
     color: 'black',
@@ -142,11 +138,11 @@ const styles = StyleSheet.create({
   },
   kotaktombol: {
     paddingVertical: 15,
-    backgroundColor: 'rgba(255,255,255,0.2)'
+    backgroundColor: '#c0392b'
   },
   texttombol: {
     textAlign: 'center',
-    color: 'black',
+    color: 'white',
     fontWeight: '700'
   },
   tombol: {

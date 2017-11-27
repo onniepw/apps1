@@ -17,7 +17,9 @@ import Login from './src/components/login/Login';
 import Dashboard from "./src/components/dashboard/Dashboard";
 import ForgetPassword from "./src/components/login/ForgetPassword";
 import Register from "./src/components/login/Register";
-import Hal1 from "./src/components/temp/Hal1";
+import Toko from "./src/components/temp/Toko";
+import Reg_Toko from "./src/components/temp/Reg_Toko";
+import Reg_Pemilik1 from "./src/components/temp/Reg_Pemilik1";
 import Hal2 from "./src/components/temp/Hal2";
 import Hal3 from "./src/components/temp/Hal3";
 import Hal4 from "./src/components/temp/Hal4";
@@ -28,7 +30,7 @@ import Hal8 from "./src/components/temp/Hal8";
 
 class Home extends Component<{}> {
   static navigationOptions = {
-    headerStyle: {backgroundColor: "#c0392b", elevation: null},
+    headerStyle: {backgroundColor: "#c0392b", elevation: null, color: "white"},
     header: null
   };
 
@@ -63,9 +65,17 @@ export default App = StackNavigator({
     screen: Dashboard,
     navigationOptions: {title: "Dashboard"}
   },
-  Hal1: {
-    screen: Hal1,
-    navigationOptions: {title: "HALAMAN 1"}
+  Toko: {
+    screen: Toko,
+    navigationOptions: {title: "Toko"}
+  },
+  Reg_Toko: {
+    screen: Reg_Toko,
+    navigationOptions: {title: "REGISTRASI TOKO"}
+  },
+  Reg_Pemilik1: {
+    screen: Reg_Pemilik1,
+    navigationOptions: {title: "REGISTRASI Pemilik 1"}
   },
   Hal2: {
     screen: Hal2,

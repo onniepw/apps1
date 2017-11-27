@@ -19,7 +19,7 @@ export default class Login extends Component<{}> {
   constructor(props) {
     super(props);
     this.state = {
-      UserEmail: "",
+      UserName: "",
       UserPassword: ""
     };
   }
@@ -33,7 +33,7 @@ export default class Login extends Component<{}> {
   };
 
   UserLoginFunction = () =>{
-    const { UserEmail }  = this.state;
+    const { UserName }  = this.state;
     const { UserPassword }  = this.state;
 
     fetch('http://ajmspk.pt-dgw.com:3040/module/testrn/user_login.php', {
@@ -43,7 +43,7 @@ export default class Login extends Component<{}> {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        email: UserEmail,
+        username: UserName,
         password: UserPassword
       })
     }).then((response) => response.json())
@@ -52,7 +52,7 @@ export default class Login extends Component<{}> {
         if(responseJson === 'Data Matched')
          {
              //Then open Profile activity and send user email to profile activity.
-             this.props.navigation.navigate('Dashboard', { Email: UserEmail });
+             this.props.navigation.navigate('Dashboard', { UserName: UserName });
          }
         else
          {
@@ -61,7 +61,6 @@ export default class Login extends Component<{}> {
       }).catch((error) => {
         console.error(error);
       });
-
   }
 
   render() {
@@ -75,21 +74,26 @@ export default class Login extends Component<{}> {
 
           <KeyboardAvoidingView behavior="padding" style={styles.kibot}>
             <TextInput
-              placeholder="Email"
+              placeholder="Username"
               placeholderTextColor="white"
               returnKeyType="next"
               onSubmitEditing={() => this.passwordInput.focus()}
-              keyboardType="email-address"
+              //keyboardType="email-address"
               autoCapitalize="none"
               autoCorrect={false}
-              value={this.state.UserEmail}
-              onChangeText={UserEmail => this.setState({ UserEmail })}
+              underlineColorAndroid='white'
+              style={{color: "white"}}
+              value={this.state.UserName}
+              onChangeText={UserName => this.setState({ UserName })}
             />
             <TextInput
               placeholder="Password"
               placeholderTextColor="white"
               returnKeyType="go"
               secureTextEntry
+              underlineColorAndroid='white'
+              style={{color: "white"}}
+              onSubmitEditing={() => this.tombolInput.focus()}
               ref={input => (this.passwordInput = input)}
               value={this.state.UserPassword}
               onChangeText={UserPassword => this.setState({ UserPassword })}
@@ -97,7 +101,7 @@ export default class Login extends Component<{}> {
 
 
             <TouchableOpacity style={styles.kotaktombol} onPress={this.UserLoginFunction}>
-              <Text style={styles.texttombol}>LOGIN</Text>
+              <Text style={styles.texttombol} ref={component => (this.tombolInput = component)}>LOGIN</Text>
             </TouchableOpacity>
           </KeyboardAvoidingView>
         </View>
